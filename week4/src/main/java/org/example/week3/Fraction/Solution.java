@@ -136,4 +136,12 @@ public class Solution {
         }
         return false;
     }
+
+    public static void main(String[] args) {
+        Solution x = new Solution(2, 3);
+        Solution y = new Solution(5, 6);
+        x = y;
+        x.setNumerator(4);
+        System.out.print(y.getNumerator());
+    }
 }   
