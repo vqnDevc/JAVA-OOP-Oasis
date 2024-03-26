@@ -1,18 +1,18 @@
-package org.example.week5;
+//package org.example.week5;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class Account {
     private double balance;
-    private ArrayList<Transaction> transactionArrayList;
+    private ArrayList<Transaction> transitionList;
 
     /**
-     * Constructor;
+     * Constructor.
      */
     public Account() {
         this.balance = 0;
-        this.transactionArrayList = new ArrayList<Transaction>();
+        this.transitionList = new ArrayList<Transaction>();
     }
 
     /**
@@ -32,7 +32,7 @@ public class Account {
      * @param amount : double
      */
     private void withdraw(double amount) {
-        if (amount <= 0 ) {
+        if (amount <= 0) {
             System.out.println("So tien ban rut ra khong hop le!");
         } else if (amount > balance) {
             System.out.println("So tien ban rut vuot qua so du!");
@@ -56,23 +56,21 @@ public class Account {
         }
 
         Transaction newTransaction = new Transaction(operation, amount, balance);
-        transactionArrayList.add(newTransaction);
+        transitionList.add(newTransaction);
     }
 
     /**
      * Print Transaction.
      */
-    public  void printTransaction() {
-        for (Transaction transaction : transactionArrayList) {
-            double roundBalance = (double) Math.round(transaction.getBalance() * 100) / 100;
-            double roundAmount = (double) Math.round(transaction.getAmount() * 100) / 100;
+    public void printTransaction() {
+        for (Transaction i : transitionList) {
+            double roundBalance = (double) Math.round(i.getBalance() * 100) / 100;
+            double roundAmount = (double) Math.round(i.getAmount() * 100) / 100;
 
-            String formattedRoundAmount = String.format("%.2f", roundAmount).replace(",",".");
-            String formattedRoundBalance = String.format("%.2f", roundBalance).replace(",",".");
-
-            String operation = transaction.getOperation().equals("deposit") ? "Nap tien" : "Rut tien";
-            System.out.println("Giao dich " + (transactionArrayList.indexOf(transaction) + 1)  + ": " + operation
-                    + " $" + formattedRoundAmount + ". So du luc nay: " + formattedRoundBalance );
+            String operation =
+                    Objects.equals(i.getOperation(), "deposit") ? "Nap tien" : "Rut tien";
+            System.out.printf("Giao dich %d: %s $%.2f. So du luc nay: $%.2f.\n",
+                    transitionList.indexOf(i) + 1, operation, roundAmount, roundBalance);
         }
     }
 

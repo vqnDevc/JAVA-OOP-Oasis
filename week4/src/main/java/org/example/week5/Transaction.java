@@ -1,4 +1,4 @@
-package org.example.week5;
+//package org.example.week5;
 
 public class Transaction {
     private String operation;
@@ -8,7 +8,7 @@ public class Transaction {
     public static final String WITHDRAW = "withdraw";
 
     /**
-     *  Constructor with three field;
+     *  Constructor with three field.
      * @param operation : string
      * @param amount : double
      * @param balance : double
