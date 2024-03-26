@@ -1,11 +1,15 @@
 package org.example.week7;
 
+import java.awt.*;
+
 /**
  * The Shape class represents a geometric shape with a color and fill status.
  * This class is abstract and cannot be instantiated directly.
  * Subclasses must implement the getArea() and getPerimeter() methods.
  */
 public abstract class Shape {
+    protected double velocityX;
+    protected double velocityY;
     /** The color of the shape. */
     protected String color;
 
@@ -18,6 +22,8 @@ public abstract class Shape {
     public Shape() {
         this.color = "";
         this.filled = false;
+        this.setVelocityX(5);
+        this.setVelocityY(5);
     }
 
     /**
@@ -29,6 +35,16 @@ public abstract class Shape {
     public Shape(String color, boolean filled) {
         this.color = color;
         this.filled = filled;
+        this.setVelocityX(5);
+        this.setVelocityY(5);
+    }
+
+    public  Shape(String color, boolean filled, double velocityX, double velocityY) {
+        this.color = color;
+        this.filled = filled;
+        this.setVelocityX(velocityX);
+        this.setVelocityY(velocityY);
+
     }
 
     /**
@@ -49,11 +65,28 @@ public abstract class Shape {
         this.color = color;
     }
 
+    public double getVelocityX() {
+        return velocityX;
+    }
+
+    public void setVelocityX(double velocityX) {
+        this.velocityX = velocityX;
+    }
+
+    public double getVelocityY() {
+        return velocityY;
+    }
+
+    public void setVelocityY(double velocityY) {
+        this.velocityY = velocityY;
+    }
+
     /**
      * Returns whether the shape is filled.
      *
      * @return true if the shape is filled, false otherwise.
      */
+
     public boolean isFilled() {
         return filled;
     }
@@ -83,6 +116,18 @@ public abstract class Shape {
      */
     public abstract double getPerimeter();
 
+    /**
+     * Movement Function of shape.
+     * @param panelWidth width
+     * @param panelHeight length
+     */
+    public abstract void move(int panelWidth, int panelHeight);
+
+    /**
+     * Display shape in GUI.
+     * @param g Graphic
+     */
+    public  abstract void draw(Graphics g);
     /**
      * Returns a string representation of the shape.
      *

@@ -1,5 +1,6 @@
 package org.example.week7;
 
+import java.awt.*;
 import java.util.Objects;
 
 /**
@@ -60,6 +61,24 @@ public class Rectangle extends Shape {
      */
     public Rectangle(Point topLeft, double width, double length, String color, boolean filled) {
         super(color, filled);
+        this.topLeft = topLeft;
+        this.width = width;
+        this.length = length;
+    }
+
+    /**
+     * Create Rectangle shape.
+     * @param topLeft point
+     * @param width width
+     * @param length length
+     * @param color color
+     * @param filled filled
+     * @param velocityX speed x
+     * @param velocityY speed y
+     */
+    public Rectangle(Point topLeft, double width, double length, String color,
+                     boolean filled, double velocityX, double velocityY) {
+        super(color, filled,velocityX,velocityY);
         this.topLeft = topLeft;
         this.width = width;
         this.length = length;
@@ -127,6 +146,66 @@ public class Rectangle extends Shape {
     @Override
     public double getPerimeter() {
         return 2 * (length + width);
+    }
+
+    /**
+     * Movement Function.
+     * @param panelWidth width
+     * @param panelHeight length
+     */
+    @Override
+    public void move(int panelWidth, int panelHeight) {
+        double x = topLeft.getPointX();
+        double y = topLeft.getPointY();
+
+        topLeft.setPointX(x + velocityX);
+        topLeft.setPointY(y + velocityY);
+
+        if (topLeft.getPointX()  <= 0 || topLeft.getPointX() + width >= panelWidth) {
+            velocityX = -velocityX;
+        }
+        if (topLeft.getPointY() - length <= 0 || topLeft.getPointY()  >= panelHeight) {
+            velocityY = -velocityY ;
+        }
+    }
+
+    /**
+     * Draw shapes.
+     * @param g Graphic
+     */
+    @Override
+    public void draw(Graphics g) {
+        switch (color) {
+            case "RED":
+                g.setColor(Color.RED);
+                break;
+            case "BLUE":
+                g.setColor(Color.BLUE);
+                break;
+            case "YELLOW":
+                g.setColor(Color.YELLOW);
+                break;
+            case "GREEN":
+                g.setColor(Color.GREEN);
+                break;
+            case "PINK":
+                g.setColor(Color.PINK);
+                break;
+            case "CYAN":
+                g.setColor(Color.CYAN);
+                break;
+            case "ORANGE":
+                g.setColor(Color.ORANGE);
+                break;
+            default:
+                g.setColor(Color.BLACK);
+                break;
+        }
+        int x = (int) topLeft.getPointX();
+        int y = (int) topLeft.getPointY();
+        int w = (int) width;
+        int l = (int) length;
+        g.fillRect(x,y-l,w,l);
     }
 
     /**
