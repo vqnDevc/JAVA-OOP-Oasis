@@ -1,6 +1,6 @@
-package org.example.week9;
+//package org.example.week9;
 
-public class Car extends Vehicle{
+public class Car extends Vehicle {
     private int numberOfDoors;
 
     /**
@@ -12,10 +12,10 @@ public class Car extends Vehicle{
      * @param owner              person
      * @param numberOfDoors      int
      */
-    public Car(String brand, String model, String registrationNumber, Person owner, int numberOfDoors) {
+    public Car(String brand, String model, String registrationNumber,
+               Person owner, int numberOfDoors) {
         super(brand, model, registrationNumber, owner);
         this.numberOfDoors = numberOfDoors;
-        owner.addVehicle(this);
     }
 
     /**
@@ -24,12 +24,12 @@ public class Car extends Vehicle{
      */
     @Override
     public String getInfo() {
-        return "Car:" +
-                "\n\tBrand: " + getBrand() +
-                "\n\tModel: " + getModel() +
-                "\n\tRegistration Number: " + getRegistrationNumber() +
-                "\n\tNumber of Doors: " + getNumberOfDoors() +
-                "\n\tBelongs to " + getOwner();
+        return "Car:"
+                + "\n\tBrand: " + getBrand()
+                + "\n\tModel: " + getModel()
+                + "\n\tRegistration Number: " + getRegistrationNumber()
+                + "\n\tNumber of Doors: " + getNumberOfDoors()
+                + "\n\tBelongs to " + getOwner();
     }
 
     public int getNumberOfDoors() {

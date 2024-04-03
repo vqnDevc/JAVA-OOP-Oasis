@@ -1,4 +1,4 @@
-package org.example.week9;
+//package org.example.week9;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ public class Person {
      * add new vehicle to personal vehicle list.
      * @param vehicle Vehicle class
      */
-    public void addVehicle (Vehicle vehicle) {
+    public void addVehicle(Vehicle vehicle) {
         vehicleList.add(vehicle);
     }
 

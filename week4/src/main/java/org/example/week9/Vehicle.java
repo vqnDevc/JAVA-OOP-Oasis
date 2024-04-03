@@ -1,4 +1,4 @@
-package org.example.week9;
+//package org.example.week9;
 
 public abstract class Vehicle {
     protected String  brand;
@@ -65,8 +65,6 @@ public abstract class Vehicle {
      * @param newOrder person
      */
     public void transferOwnership(Person newOrder) {
-        owner.removeVehicle(registrationNumber);
         owner = newOrder;
-        owner.addVehicle(this);
     }
 }

@@ -1,6 +1,6 @@
-package org.example.week9;
+//package org.example.week9;
 
-public class MotorBike extends Vehicle{
+public class MotorBike extends Vehicle {
     private boolean hasSidecar;
 
     /**
@@ -12,10 +12,10 @@ public class MotorBike extends Vehicle{
      * @param owner              person
      * @param hasSidecar         boolean
      */
-    public MotorBike(String brand, String model, String registrationNumber, Person owner, boolean hasSidecar) {
+    public MotorBike(String brand, String model, String registrationNumber,
+                     Person owner, boolean hasSidecar) {
         super(brand, model, registrationNumber, owner);
         this.hasSidecar = hasSidecar;
-        owner.addVehicle(this);
     }
 
     /**
@@ -24,12 +24,12 @@ public class MotorBike extends Vehicle{
      */
     @Override
     public String getInfo() {
-        return "Motor Bike:" +
-                "\n\tBrand: " + getBrand() +
-                "\n\tModel: " + getModel() +
-                "\n\tRegistration Number: " + getRegistrationNumber() +
-                "\n\tHas Side Car: " + isHasSidecar() +
-                "\n\tBelongs to " + getOwner();
+        return "Motor Bike:"
+                + "\n\tBrand: " + getBrand()
+                + "\n\tModel: " + getModel()
+                + "\n\tRegistration Number: " + getRegistrationNumber()
+                + "\n\tHas Side Car: " + isHasSidecar()
+                + "\n\tBelongs to " + getOwner();
     }
 
     public boolean isHasSidecar() {
