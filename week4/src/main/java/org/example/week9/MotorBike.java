@@ -1,4 +1,4 @@
-//package org.example.week9;
+package org.example.week9;
 
 public class MotorBike extends Vehicle {
     private boolean hasSidecar;

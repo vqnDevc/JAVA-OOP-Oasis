@@ -20,6 +20,7 @@ public class Main {
             newLayer.addShape(new Circle(new Point(200,90),30,"CYAN",false,2,8));
             newLayer.addShape(new Circle(new Point(150,180),40,"ORANGE",false));
 
+
             newLayer.addShape(new Rectangle(new Point(350,60),120,60,"BLUE",false, 6 ,10));
             newLayer.addShape(new Square(new Point(50,340),50,"PINK",false));
 

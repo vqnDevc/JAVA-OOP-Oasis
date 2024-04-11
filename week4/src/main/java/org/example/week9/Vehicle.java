@@ -1,4 +1,4 @@
-//package org.example.week9;
+package org.example.week9;
 
 public abstract class Vehicle {
     protected String  brand;
