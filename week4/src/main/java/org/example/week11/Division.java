@@ -1,4 +1,4 @@
-package org.example.week11;
+//package org.example.week11;
 
 public class Division extends BinaryExpression {
     public Division(Expression left, Expression right) {
@@ -13,10 +13,11 @@ public class Division extends BinaryExpression {
     public double division(double left, double right) throws ArithmeticException {
         return left / right;
     }
+
     @Override
     public double evaluate() {
         if (right.evaluate() == 0) {
-            throw new ArithmeticException("Division by zero");
+            throw new ArithmeticException("Lỗi chia cho 0");
         } else {
             return left.evaluate() / right.evaluate();
         }

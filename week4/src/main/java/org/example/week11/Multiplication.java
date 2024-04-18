@@ -1,6 +1,6 @@
-package org.example.week11;
+//package org.example.week11;
 
-public class Multiplication extends BinaryExpression{
+public class Multiplication extends BinaryExpression {
     public Multiplication(Expression left, Expression right) {
         super(left, right);
     }

@@ -1,7 +1,3 @@
-/**
- * This class demonstrates different types of exceptions and provides methods to throw and handle them.
- */
-package org.example.week11;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -21,7 +17,8 @@ public class Week8Task2 {
     /**
      * Throws an ArrayIndexOutOfBoundsException intentionally.
      *
-     * @throws ArrayIndexOutOfBoundsException if an attempt is made to access an index outside the bounds of an array
+     * @throws ArrayIndexOutOfBoundsException if an attempt is made to access
+     * an index outside the bounds of an array
      */
     public void arrayIndexOutOfBoundsEx() throws ArrayIndexOutOfBoundsException {
 
@@ -59,21 +56,23 @@ public class Week8Task2 {
     /**
      * Tests the occurrence of a NullPointerException and returns the result.
      *
-     * @return a message indicating whether the test passed without errors or if a NullPointerException occurred
+     * @return a message indicating whether the test passed without errors
+     * or if a NullPointerException occurred
      */
     public String nullPointerExTest() {
         try {
             nullPointerEx();
             return "Không có lỗi";
         } catch (NullPointerException e) {
-            return "Lỗi Null pointer";
+            return "Lỗi Null Pointer";
         }
     }
 
     /**
      * Tests the occurrence of an ArrayIndexOutOfBoundsException and returns the result.
      *
-     * @return a message indicating whether the test passed without errors or if an ArrayIndexOutOfBoundsException occurred
+     * @return a message indicating whether the test passed without errors
+     * or if an ArrayIndexOutOfBoundsException occurred
      */
     public String arrayIndexOutOfBoundsExTest() {
         try {
@@ -87,7 +86,8 @@ public class Week8Task2 {
     /**
      * Tests the occurrence of an ArithmeticException and returns the result.
      *
-     * @return a message indicating whether the test passed without errors or if an ArithmeticException occurred
+     * @return a message indicating whether the test passed without errors
+     * or if an ArithmeticException occurred
      */
     public String arithmeticExTest() {
         try {
@@ -101,7 +101,8 @@ public class Week8Task2 {
     /**
      * Tests the occurrence of a FileNotFoundException and returns the result.
      *
-     * @return a message indicating whether the test passed without errors or if a FileNotFoundException occurred
+     * @return a message indicating whether the test passed without errors
+     * or if a FileNotFoundException occurred
      */
     public String fileNotFoundExTest() {
         try {
@@ -115,7 +116,8 @@ public class Week8Task2 {
     /**
      * Tests the occurrence of an IOException and returns the result.
      *
-     * @return a message indicating whether the test passed without errors or if an IOException occurred
+     * @return a message indicating whether the test passed without errors
+     * or if an IOException occurred
      */
     public String ioExTest() {
         try {
